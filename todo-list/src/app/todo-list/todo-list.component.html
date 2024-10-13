@@ -1,0 +1,25 @@
+<div>
+    <h1>Sua Lista</h1>
+
+    <div class="form">
+        <input [(ngModel)]="newTodoTitle" placeholder="Título">
+        <input [(ngModel)]="newTodoDescription" placeholder="Descrição">
+        <input [(ngModel)]="newTodoPrice" type="number" placeholder="Preço">
+        <button (click)="addTodo()">Adicionar tarefe</button>
+    </div>
+    <div class="todos">
+        <h2>Tarefas</h2>
+        <ul>
+            <li *ngFor='let todo of todos; let item = index'>
+                <input type="checkbox" [checked]="todo.completed" (change)="toggleCompletion(item)">
+                <span [class.completed]="todo.completed">{{todo.title}}</span>
+                <span *ngIf="todo.price">R$ {{todo.price.toFixed(2).replace('.',',')}}</span>
+                <button (click)="removeTodo(item)">Remover</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="total">
+        <h3 *ngIf="todos.length > 0">Total: R$ {{getTotalPrice().toFixed(2).replace('.',',')}}</h3>
+    </div>
+</div>
