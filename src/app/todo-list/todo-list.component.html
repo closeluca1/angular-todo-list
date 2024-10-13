@@ -12,7 +12,7 @@
         <ul>
             <li *ngFor='let todo of todos; let item = index'>
                 <input type="checkbox" [checked]="todo.completed" (change)="toggleCompletion(item)">
-                <span [class.completed]="todo.completed">{{todo.title}}</span>
+                <span [class.completed]="todo.completed">{{todo.title}} - {{todo.description}}</span>
                 <span *ngIf="todo.price">R$ {{todo.price.toFixed(2).replace('.',',')}}</span>
                 <button (click)="removeTodo(item)">Remover</button>
             </li>

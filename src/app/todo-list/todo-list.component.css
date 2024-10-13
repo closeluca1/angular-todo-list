@@ -26,6 +26,7 @@ h1 {
 /* Estilo do formulário */
 .form {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -45,6 +46,7 @@ h1 {
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%;
 }
 
 .form button:hover {
